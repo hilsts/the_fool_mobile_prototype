@@ -1,4 +1,4 @@
-from data import data_handler
+
 
 MECHANIC_PATH = "../data/mechanic/mechanic.json"
 
