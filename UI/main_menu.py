@@ -1,5 +1,4 @@
 from create import choose_class
-from character.character import Character
 from load import list_characters
 
 def input_validation(input, max_value):
@@ -9,6 +8,7 @@ def input_validation(input, max_value):
 
     else:
         return 1
+
 
 def menu():
 
@@ -30,6 +30,8 @@ def menu():
         return menu()
 
 menu()
+
+
 
 
 

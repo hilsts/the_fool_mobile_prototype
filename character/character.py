@@ -52,8 +52,6 @@ def get_characters():
 
     characters = data_handler.get_file_data(CHARACTER_PATH)
 
-    print(characters)
-
     return characters
 
 

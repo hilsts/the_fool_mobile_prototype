@@ -36,3 +36,24 @@ class World():
     def list_worlds(self):
 
         worlds = data_handler.get_file_data(WORLDS_PATH)
+
+    def build_world(self, class_id):
+
+        from static.classes import CLASSES_EDGES, CLASSES
+
+        class_name = CLASSES[class_id]
+
+        mechanics = [class_name]
+        for ce in CLASSES_EDGES:
+            if class_name in ce:
+                for mechanic in list(ce):
+                    if mechanic != class_name:
+                        mechanics.append(mechanic)
+
+        return mechanics
+
+
+
+
+
+

@@ -1,26 +1,6 @@
-from character.character import get_characters, Character
+from character.character import Character, get_characters
 from world.world import World
-import main_world
-
-def input_validation(input, max_value):
-
-    if input < 1 or input > max_value:
-        return 0
-
-    else:
-        return 1
-
-def load_game(character_id, characters):
-
-    for char in characters:
-
-            if char['character_id'] == character_id:
-
-                world = World(world_id=char['world_id'])
-                character = Character(world, character_id=character_id)
-
-
-
+from create import input_validation
 
 def list_characters():
     print("Choose a character: ")
@@ -32,12 +12,28 @@ def list_characters():
     input_ = input()
     if input_validation(int(input_), len(characters)):
 
-        return load_charater()
+        return int(input_)
 
     else:
         print("Valor inválido!")
         return list_characters()
 
+def load_char_world(character_id, characters):
 
+    for char in characters:
+
+        if char['character_id'] == character_id:
+
+            world = World(world_id=char['world_id'])
+            character = Character(world)
+            character.load_character(char)
+
+            # print(character.__dict__)
+            return [world, character]
+
+#
+# def load_mechanics(class_id):
+#
+#     # TODO
 
 
